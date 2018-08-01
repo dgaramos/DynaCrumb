@@ -1,6 +1,7 @@
 <template>
   <div>
     <ol class="breadcrumb">
+      <li class="breadcrumb-item" v-if="( group !== '' )">{{ group }}</li>
 			<li class="breadcrumb-item" v-for="dynacrumb in dynacrumbContent" :key="dynacrumb.path">
         <router-link :to="dynacrumb.path">
           {{dynacrumb.meta.breadcrumb}}
@@ -18,7 +19,8 @@ export default {
   },
   data() {
     return {
-      dynacrumbContent: []
+      dynacrumbContent: [],
+      group: ''
     };
   },
   watch: {
@@ -32,20 +34,28 @@ export default {
           break;
         }
       }
-      console.log("found", found);
-      console.log("index", index);
-      if (found) {
-        this.dynacrumbContent.splice(
-          index,
-          this.dynacrumbContent.length - index
-        );
+      if (this.group === this.$route.meta.group){
+        if (found) {
+          this.dynacrumbContent.splice(
+            index,
+            this.dynacrumbContent.length - index
+          );
+        }
+        this.insertPage();
+      }else{
+        this.resetDynaCrumb()
+        this.insertPage()
       }
-      this.insertPage();
     }
   },
   methods: {
     insertPage() {
       this.dynacrumbContent.push(this.$route);
+      this.group = this.$route.meta.group
+    },
+    resetDynaCrumb(){
+      this.dynacrumbContent = []
+      this.group = ''
     }
   }
 };

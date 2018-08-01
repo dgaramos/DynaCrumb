@@ -1,5 +1,5 @@
 {
-  "name": "dynamic-breadcrumb",
+  "name": "dynacrumb",
   "version": "1.0.0",
   "description": "Um breadcrumb dinamico usando vue routes",
   "main": "src/main.js",
