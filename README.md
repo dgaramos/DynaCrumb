@@ -1,27 +1,12 @@
-# test-project
+# DynaCrumb - Um Breadcrumb dinâmico
 
-> A Vue.js project
-
-## Build Setup
-
+> O DynaCrumb é um Breadcrumb dinâmico baseado na dependencia vue-router do vue
+> Para utilizar o DynaCrumb, basta copiar o arquivo components/DynaCrumb.vue
+> Para o funcionamento correto é necessário seguir o seguinte padrão na hora de listar as rotas:
 ``` bash
-# install dependencies
-npm install
+  {
+    path: "/",
+    component: Inicial,
+    meta: { group: "", breadcrumb: "Inicial" }
+  }
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
