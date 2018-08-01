@@ -24,7 +24,7 @@ export default {
     };
   },
   watch: {
-    $route: function() {
+    $route (to, from) {
       let index;
       let found = false;
       for (var i = 0; i < this.dynacrumbContent.length; i++) {
