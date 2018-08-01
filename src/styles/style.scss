@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+
+body {
+  font-family: "Dosis", sans-serif;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.container-body {
+  max-width: 1200px;
+}
+
+.main-col {
+  text-align: center;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+.header-text {
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
